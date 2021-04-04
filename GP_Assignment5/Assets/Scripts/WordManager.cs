@@ -46,6 +46,17 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(activeWord);
+            FindObjectOfType<GameManager>().IncreaseScore();
         }
+    }
+
+    public void ClearScreen()
+    {
+        foreach(Word word in words)
+        {
+            word.display.RemoveWord();
+        }
+        words.Clear();
+        hasActiveWord = false;
     }
 }

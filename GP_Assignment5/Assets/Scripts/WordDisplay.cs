@@ -9,6 +9,17 @@ public class WordDisplay : MonoBehaviour
 
     public float fallSpeed = 1f;
 
+    public void Start()
+    {
+        switch (FindObjectOfType<GameManager>().Speed)
+        {
+            default: fallSpeed = 1f; break;
+            case 1: fallSpeed = 1f; break;
+            case 2: fallSpeed = 3f; break;
+            case 3: fallSpeed = 5f; break;
+        }
+    }
+
     private void Update()
     {
         transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);

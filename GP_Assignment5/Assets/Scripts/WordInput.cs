@@ -11,7 +11,8 @@ public class WordInput : MonoBehaviour
     {
         foreach(char letter in Input.inputString)
         {
-            wordManager.TypeLetter(letter);
+            if(FindObjectOfType<GameManager>().pauseMenu.activeSelf == false)
+                wordManager.TypeLetter(letter);
         }
     }
 }

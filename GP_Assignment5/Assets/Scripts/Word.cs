@@ -8,7 +8,7 @@ public class Word
     public string word;
     private int TypeIndex;
 
-    private WordDisplay display;
+    public WordDisplay display;
 
     public Word (string _word, WordDisplay _display)
     {
